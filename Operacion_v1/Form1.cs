@@ -19,76 +19,55 @@ namespace Operacion_v1
 
         private void btRes_Click(object sender, EventArgs e)
         {
-            int A = System.Convert.ToInt32(txtA.Text);
-            int B = System.Convert.ToInt32(txtB.Text);
-            decimal Res = 0;
-
-            if (txtOper.Text == "+")
-            {
-                Res = A + B;
-            }
-            else if (txtOper.Text == "-") 
-            {
-                Res = A - B;
-            }
-            else if (txtOper.Text == "*")
-            {
-                Res = A * B;
-            }
-            else if (txtOper.Text == "/")
-            {
-                Res = A / B;
-            }
-            else
-            {
-                Res = -999999999;
-            }
-
-            if (Res == -999999999)
-            {
-                lblRes.Text = "ERROR";
-            }
-            else
-            {
-                lblRes.Text = Res.ToString();
-            }
+            BE.Operacion pepe = new BE.Operacion(txtA.Text, txtB.Text);
+            lblRes.Text = pepe.Calcular(txtOper.Text);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int A = System.Convert.ToInt32(txtA.Text);
-            int B = System.Convert.ToInt32(txtB.Text);
-            decimal Res = 0;
+            BE.Operacion pepito = new BE.Operacion(textBox3.Text, textBox2.Text);
+            label1.Text = pepito.Calcular(textBox1.Text);
 
-            if (txtOper.Text == "+")
-            {
-                Res = A + B;
-            }
-            else if (txtOper.Text == "-")
-            {
-                Res = A - B;
-            }
-            else if (txtOper.Text == "*")
-            {
-                Res = A * B;
-            }
-            else if (txtOper.Text == "/")
-            {
-                Res = A / B;
-            }
-            else
-            {
-                Res = -999999999;
-            }
+            //int A = System.Convert.ToInt32(txtA.Text);
+            //int B = System.Convert.ToInt32(txtB.Text);
+            //decimal Res = 0;
 
-            if (Res == -999999999)
-            {
-                lblRes.Text = "ERROR";
-            }
-            else
-            {
-                lblRes.Text = Res.ToString();
-            }
+            //if (oper == "+")
+            //{
+            //    Res = A + B;
+            //}
+            //else if (oper == "-")
+            //{
+            //    Res = A - B;
+            //}
+            //else if (oper == "*")
+            //{
+            //    Res = A * B;
+            //}
+            //else if (oper == "/")
+            //{
+            //    Res = A / B;
+            //}
+            //else
+            //{
+            //    Res = -999999999;
+            //}
+
+            //if (Res == -999999999)
+            //{
+            //    lblRes.Text = "ERROR";
+            //}
+            //else
+            //{
+            //    lblRes.Text = Res.ToString();
+            //}
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BE.Operacion pepito = new BE.Operacion(10, 20);
+            label1.Text = pepito.Calcular("*");
+
         }
     }
 }
